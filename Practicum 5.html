@@ -1,0 +1,394 @@
+
+<!-- By: Jerusha Adon Ganupalli -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Collab Nest</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fc;
+            color: #333;
+        }
+
+        /* HEADER */
+
+        header {
+            background-color: #17365d;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        /* NAVIGATION MENU USING FLEXBOX */
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #315c87;
+            border-radius: 5px;
+        }
+
+        /* HOVER DROP-DOWN MENU */
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .dropdown li a {
+            color: #17365d;
+            padding: 12px;
+        }
+
+        .dropdown li a:hover {
+            background-color: #e3eff9;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        /* INTRODUCTION */
+
+        .intro {
+            text-align: center;
+            padding: 55px 10%;
+        }
+
+        .intro h2 {
+            font-size: 32px;
+            color: #24527a;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #536779;
+        }
+
+        /* AIM AND VISION USING FLEXBOX */
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 20px 8%;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background-color: white;
+            flex: 1;
+            min-width: 250px;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 5px solid #5796c9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .box h3 {
+            color: #24527a;
+            font-size: 23px;
+        }
+
+        .box p {
+            line-height: 1.8;
+            color: #536779;
+        }
+
+        /* FEATURES USING CSS GRID */
+
+        .features {
+            padding: 40px 8%;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #24527a;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-box h3 {
+            color: #24527a;
+        }
+
+        .feature-box p {
+            color: #536779;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #17365d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .intro h2 {
+                font-size: 26px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dropdown {
+                position: static;
+            }
+
+            .intro {
+                padding: 35px 6%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER AND NAVIGATION -->
+
+    <header>
+
+        <h1>Collab Nest</h1>
+
+        <nav>
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About Us</a></li>
+
+                <li>
+                    <a href="#features">Services ▼</a>
+
+                    <!-- DROP-DOWN MENU -->
+
+                    <ul class="dropdown">
+                        <li><a href="#communication">Communication</a></li>
+                        <li><a href="#sharing">File Sharing</a></li>
+                        <li><a href="#management">Task Management</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro" id="home">
+
+        <h2>Welcome to Collab Nest!</h2>
+
+        <p>
+            Connect, collaborate and create together.
+            Collab Nest is a collaborative platform designed to bring
+            teams together through easy communication, idea sharing,
+            file sharing and efficient project management.
+        </p>
+
+    </section>
+
+
+    <!-- AIM AND VISION -->
+
+    <section class="container" id="about">
+
+        <div class="box">
+
+            <h3>Our Aim</h3>
+
+            <p>
+                To create a simple and effective platform where
+                individuals and teams can communicate, share ideas,
+                manage projects and work together efficiently.
+            </p>
+
+        </div>
+
+        <div class="box">
+
+            <h3>Our Vision</h3>
+
+            <p>
+                To build an organized digital workspace that encourages
+                teamwork, creativity, productivity and smooth
+                communication among individuals.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES USING CSS GRID -->
+
+    <section class="features" id="features">
+
+        <h2>Our Features</h2>
+
+        <div class="grid-container">
+
+            <div class="feature-box" id="communication">
+                <h3>Team Communication</h3>
+                <p>
+                    Communicate easily with team members
+                    and exchange ideas.
+                </p>
+            </div>
+
+            <div class="feature-box" id="sharing">
+                <h3>File Sharing</h3>
+                <p>
+                    Share important files, documents
+                    and resources with your team.
+                </p>
+            </div>
+
+            <div class="feature-box" id="management">
+                <h3>Task Management</h3>
+                <p>
+                    Organize tasks, assign responsibilities
+                    and track project progress.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Idea Sharing</h3>
+                <p>
+                    Share creative ideas and discuss
+                    solutions with team members.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Team Workspace</h3>
+                <p>
+                    Keep all team activities and resources
+                    organized in one place.
+                </p>
+            </div>
+
+            <div class="feature-box">
+                <h3>Easy Interface</h3>
+                <p>
+                    Enjoy a simple and user-friendly
+                    collaboration experience.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+
+        <p>Contact Us: collabnest@example.com</p>
+
+        <p>© 2026 Collab Nest | Connect • Collaborate • Create</p>
+
+    </footer>
+
+</body>
+</html>
